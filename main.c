@@ -1,16 +1,14 @@
-#define _CRT_SECURE_NO_WARNINGS 1
-
 #include <stdio.h>
 #include <math.h>
-
-double func(double);
-double LRAM(double(*funcPtr)(double), double a, double b, int n);
-double RRAM(double(*funcPtr)(double), double a, double b, int n);
-double simpson(double(*funcPtr)(double), double a, double b);
-double simpsonStrips(double(*funcPtr)(double), double a, double b, int strips);
+#include "main.h"
+#include "area_approx_config.h"
 
 int main(void)
 {
+	printf("Version %d.%d\n", 
+			AREA_APPROX_MAJOR_VERSION,
+			AREA_APPROX_MINOR_VERSION);
+
 	double(*funcPtr)(double) = func;
 
 	double a = 0,
